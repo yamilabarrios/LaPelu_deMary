@@ -156,16 +156,17 @@ body .img-circle {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  margin: 10px;
 }
 .trabajos h1 {
   color: white;
   text-align: center;
   text-decoration: underline;
   text-underline-offset: 0.1em;
-  padding: 5px;
+  padding: 10px;
 }
 .trabajos section {
-  padding: 10px;
+  padding: 5px;
 }
 .trabajos section .card-img-top {
   width: 100%;
