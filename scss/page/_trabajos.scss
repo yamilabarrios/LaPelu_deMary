@@ -1,0 +1,26 @@
+@use "../utilities/mixin"as*;
+@use "sass:map";
+@use"../utilities/maps" as*;
+
+.trabajos{
+    background: linear-gradient(to right, rgb(0 0 0/ 0.1),rgb(0 0 0/ 0.1)), url(colorimetria.jpg);
+    @include fondo_imagen;
+    h1{
+        color: map-get($colores, h1 );
+        text-align: center;
+        text-decoration: underline;
+        text-underline-offset: 0.1em; 
+        padding: 5px;
+    }
+    section{
+        padding: 10px;
+        .card-img-top{
+        width: 100%;
+        height: 400px;
+        }
+        .card-body{
+        width: 100%;
+        height: 100%;
+        }
+    }
+}

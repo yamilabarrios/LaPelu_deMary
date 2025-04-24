@@ -1,0 +1,20 @@
+/* MOVIL */
+@media (min-width: 320px){
+
+}
+
+/* TABLET */
+@media (min-width: 768px){
+
+}
+/* COMPUTADORA  */
+@media (min-width: 1180px){
+    .conteiner_t {
+        grid-template-columns: repeat (4, 1fr);
+        grid-template-rows: repeat(2,50%);
+     }
+     .card{
+
+        transform: translate(90px, 100px);
+     }
+}

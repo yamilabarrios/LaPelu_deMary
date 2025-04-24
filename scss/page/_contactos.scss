@@ -1,0 +1,56 @@
+@use "../utilities/mixin"as*;
+@use "sass:map";
+@use"../utilities/maps" as*;
+
+    .fondo{
+    background-image:  url(contactoo.jpg);
+    @include fondo_imagen;
+
+    .card{
+        align-items: center;
+        position: relative;
+        transform: translate(10px, 10px);
+        width: 60%;
+        height: 90%;
+        background-color: map-get($colores, fondo );
+        border: 2px solid map-get($colores, borde);
+        
+
+    }
+    .card-body{
+        margin: 10px;
+        
+        background-color:  map-get($colores, texto);
+        border: 2px solid map-get($colores, borde);
+
+    }
+    h3{
+        text-decoration: underline;
+        font-size: 15px;
+    } 
+    p {font-size: 15px;}
+    a {font-size: 15px;}
+  
+} 
+.formulario{    
+    display: grid;
+    font-size: 20px;
+    border: 2px solid map-get($colores, borde); 
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60%;
+    background-color:  map-get($colores, fondo) ;
+    border: 2px solid map-get($colores, borde);
+
+
+    .cuadrado{
+        margin: 20px;
+        padding: 20px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        background-color: map-get($colores, fondo2); 
+        border: 2px solid map-get($colores, borde); 
+    }    
+    }

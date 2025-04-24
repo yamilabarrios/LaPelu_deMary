@@ -1,0 +1,34 @@
+@use "../utilities/mixin"as*;
+@use "../utilities/extend"as*;
+.cyp{
+    justify-content: center;
+    background: linear-gradient(to right, rgb(0 0 0/ 0.1),rgb(0 0 0/ 0.1)), url(iconotijera.png);
+    height: 100%;
+    width: 100%;
+    padding: 5px;   
+    h1{ 
+        @extend %titulo;
+    }
+    h2{
+        @extend %titulo;
+    }
+    .conteiner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 20px;
+    gap: 20px;
+    }
+    .item { 
+    @include item;
+    animation: name-of-animation 2s;
+
+}
+}
+@keyframes name-of-animation {
+    0%    { opacity: 0; }
+    20%   { opacity: 1; }
+    80%   { opacity: 0; }
+    100%  { opacity: 1; }
+  }
+
+

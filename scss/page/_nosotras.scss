@@ -1,0 +1,35 @@
+@use "sass:map";
+@use"../utilities/maps" as*;
+.nosotras{
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        height: 100%;
+        width: 100%; 
+        background: linear-gradient(to right, rgb(0 0 0/ 0.1),rgb(0 0 0/ 0.1));
+        background-size: cover;
+        background-position: center;
+    }
+    .rectangulo {
+        justify-content: center;
+        margin: 20px;
+        width: 90%;
+        height: 100%; 
+        background-color: map-get($colores, fondo2 ); 
+        border: 1px solid map-get($colores, borde); 
+        animation: girar 1s;
+        p{
+        text-align: center;
+        font-size: 25px;
+        }
+    
+
+    } 
+    @keyframes girar {
+            0% {
+            transform: rotate(0deg);
+            }
+            100% {
+            transform: rotate(360deg);
+            }
+        }
