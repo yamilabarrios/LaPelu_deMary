@@ -1,19 +1,46 @@
 @charset "UTF-8";
 /* MOVIL */
+@media (min-width: 320px) {
+  main {
+    display: block;
+  }
+  main .conteiner_t {
+    width: 100%;
+    height: auto; /* Ajusta según sea necesario */
+    padding: 10px; /* Ajusta según sea necesario */
+    margin: 5px;
+  }
+  main .item_t {
+    width: 100%; /* 1 item por fila en móviles */
+    margin: 10px 0;
+  }
+  main .elemento {
+    /* Otros estilos específicos para móviles */
+    padding: 10px;
+  }
+  h1 {
+    font-family: 20px;
+  }
+}
 /* TABLET */
+@media (min-width: 768px) {
+  .item_t {
+    width: calc(50% - 20px); /* 2 items por fila en tablets */
+  }
+}
 /* COMPUTADORA  */
 @media (min-width: 1180px) {
+  .texto h1 {
+    font-family: 100px;
+  }
   .conteiner_t {
+    display: grid;
     grid-template-columns: repeat 4, 1fr;
     grid-template-rows: repeat(2, 50%);
-  }
-  .card {
-    transform: translate(90px, 100px);
   }
 }
 .cyp h1, .cyp h2 {
   text-align: center;
-  background: linear-gradient(to right, hsla(0, 83%, 91%, 0.764), hsla(0, 83%, 91%, 0.764));
   height: 100%;
   font-size: 50px;
   padding: 20px;
@@ -33,18 +60,19 @@ body a {
 }
 
 body {
-  background-color: #facad5;
+  background-color: lch(95.29% 7.12 354.28);
 }
 body p {
   font-family: "Times New Roman";
   text-align: center;
   font-size: 20px;
+  padding: 20px;
 }
 body a {
   font-family: "Times New Roman";
 }
 body a:hover {
-  background-color: rgb(252, 237, 244);
+  background-color: hwb(334 90% 0%);
 }
 body .img-circle {
   border-radius: 50%;
@@ -71,13 +99,13 @@ body .img-circle {
 }
 .portada .texto {
   text-align: center;
-  width: 50%;
+  width: 90%;
   color: rgb(255, 255, 255);
 }
 .portada .texto h1 {
-  font-size: 90px;
   text-decoration: underline;
   text-underline-offset: 0.1em;
+  font-size: 60px;
 }
 .portada .texto h2 {
   font-size: 60px;
@@ -89,7 +117,7 @@ body .img-circle {
   align-items: center;
   height: 100%;
   width: 100%;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+  background: linear-gradient(to right, lab(97.31% 0.34 0.11/0.739), rgba(255, 255, 255, 0.6117647059));
   background-size: cover;
   background-position: center;
 }
@@ -99,26 +127,29 @@ body .img-circle {
   margin: 20px;
   width: 90%;
   height: 100%;
-  background-color: rgb(252, 237, 244);
+  background-color: hwb(334 90% 0%);
   border: 1px solid black;
-  animation: girar 1s;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 8px;
 }
 .rectangulo p {
   text-align: center;
   font-size: 25px;
+  animation: texto-desde-abajo 4s ease-in-out forwards; /* Duración de la animación, función de tiempo y ajuste de la animación */
 }
-
-@keyframes girar {
+@keyframes texto-desde-abajo {
   0% {
-    transform: rotate(0deg);
+    transform: translateY(100%); /* El texto comienza fuera de la pantalla, en la parte inferior */
   }
   100% {
-    transform: rotate(360deg);
+    transform: translateY(0); /* El texto se desplaza a la posición final, en la posición original */
   }
 }
+
 .cyp {
   justify-content: center;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(iconotijera.png);
+  background: linear-gradient(to right, lab(97.31% 0.34 0.11/0.739), rgba(255, 255, 255, 0.6117647059)), url(iconotijera.png);
   height: 100%;
   width: 100%;
   padding: 5px;
@@ -134,117 +165,112 @@ body .img-circle {
   height: 100%;
   text-align: center;
   border: 1px solid black;
-  animation: name-of-animation 2s;
+  animation: flipinx 5s;
 }
 
-@keyframes name-of-animation {
+@keyframes flipinx {
   0% {
+    transform: rotateX(90deg);
     opacity: 0;
-  }
-  20% {
-    opacity: 1;
   }
   80% {
-    opacity: 0;
+    transform: rotateX(-10deg);
+    opacity: 0.8;
   }
   100% {
+    transform: rotateX(0deg);
     opacity: 1;
   }
 }
 .trabajos {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(colorimetria.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  margin: 10px;
 }
 .trabajos h1 {
-  color: white;
+  color: black;
   text-align: center;
   text-decoration: underline;
   text-underline-offset: 0.1em;
   padding: 10px;
 }
-.trabajos section {
-  padding: 5px;
+.trabajos .card {
+  border: 1px solid black;
 }
-.trabajos section .card-img-top {
-  width: 100%;
-  height: 400px;
-}
-.trabajos section .card-body {
-  width: 100%;
-  height: 100%;
+.trabajos .container {
+  padding: 1%;
 }
 
 .conteiner_t {
-  display: grid;
-  grid-template-columns: repeat 4, 1fr;
+  display: flex;
+  flex-wrap: wrap; /* Permite que los items pasen a la siguiente línea en pantallas pequeñas */
+  justify-content: center; /* Centra los items horizontalmente */
   padding: 20px;
-  margin: 10px;
-  gap: 20px;
 }
 .conteiner_t .item_t {
   width: 100%;
   height: 100%;
   text-align: center;
   border: 1px solid black;
+  background: hwb(334 90% 0%);
 }
 .conteiner_t h1 {
   text-align: center;
   padding: 20px;
 }
 
-.fondo {
-  background-image: url(contactoo.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+.contacto {
+  justify-content: center;
+  margin: 20px;
+  width: 90%;
+  height: 100%;
+  background-color: hwb(334 90% 0%);
+  border: 1px solid black;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 8px;
 }
-.fondo .card {
-  align-items: center;
-  position: relative;
-  transform: translate(10px, 10px);
-  width: 60%;
-  height: 90%;
-  background-color: #facad5;
-  border: 2px solid black;
+.contacto h1 {
+  text-align: center;
 }
-.fondo .card-body {
-  margin: 10px;
-  background-color: rgb(255, 255, 255);
-  border: 2px solid black;
+.contacto p {
+  text-align: center;
+  font-size: 25px;
+  animation: texto-desde-abajo 4s ease-in-out forwards; /* Duración de la animación, función de tiempo y ajuste de la animación */
 }
-.fondo h3 {
-  text-decoration: underline;
-  font-size: 15px;
-}
-.fondo p {
-  font-size: 15px;
-}
-.fondo a {
-  font-size: 15px;
+@keyframes texto-desde-abajo {
+  0% {
+    transform: translateY(100%); /* El texto comienza fuera de la pantalla, en la parte inferior */
+  }
+  100% {
+    transform: translateY(0); /* El texto se desplaza a la posición final, en la posición original */
+  }
 }
 
 .formulario {
-  display: grid;
-  font-size: 20px;
-  border: 2px solid black;
   justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 60%;
-  background-color: #facad5;
-  border: 2px solid black;
-}
-.formulario .cuadrado {
   margin: 20px;
+  width: 90%;
+  height: 100%;
+  background-color: hwb(334 90% 0%);
+  border: 1px solid black;
+  margin-bottom: 20px;
   padding: 20px;
+  border-radius: 8px;
+  display: flex;
+}
+.formulario p {
   text-align: center;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(252, 237, 244);
-  border: 2px solid black;
+  font-size: 25px;
+  animation: texto-desde-abajo 4s ease-in-out forwards; /* Duración de la animación, función de tiempo y ajuste de la animación */
+}
+@keyframes texto-desde-abajo {
+  0% {
+    transform: translateY(100%); /* El texto comienza fuera de la pantalla, en la parte inferior */
+  }
+  100% {
+    transform: translateY(0); /* El texto se desplaza a la posición final, en la posición original */
+  }
 }
 
 footer ul {

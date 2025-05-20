@@ -2,7 +2,7 @@
 @use "../utilities/extend"as*;
 .cyp{
     justify-content: center;
-    background: linear-gradient(to right, rgb(0 0 0/ 0.1),rgb(0 0 0/ 0.1)), url(iconotijera.png);
+    background: linear-gradient(to right, lab(97.31% 0.34 0.11 / 0.739),#ffffff9c), url(iconotijera.png);
     height: 100%;
     width: 100%;
     padding: 5px;   
@@ -20,15 +20,24 @@
     }
     .item { 
     @include item;
-    animation: name-of-animation 2s;
+    animation: flipinx 5s;
 
 }
 }
-@keyframes name-of-animation {
-    0%    { opacity: 0; }
-    20%   { opacity: 1; }
-    80%   { opacity: 0; }
-    100%  { opacity: 1; }
-  }
+@keyframes flipinx {
+    0% {
+        transform: rotateX(90deg);
+        opacity: 0;
+    }
+    80% {
+        transform: rotateX(-10deg);
+        opacity: 0.8;
+    }
+    100% {
+        transform: rotateX(0deg);
+        opacity: 1;
+    }
+}
+
 
 

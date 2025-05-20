@@ -1,6 +1,7 @@
 @use "../utilities/mixin"as*;
 @use "sass:map";
 @use"../utilities/maps" as*;
+
 .portada{
     display: flex;
     justify-content: center;
@@ -11,13 +12,13 @@
     border: 1px solid map-get($colores, borde);
     .texto{
         text-align: center;
-        width: 50%;
+        width: 90%;
         color: map-get($colores, texto);
         }
         .texto h1{
-            font-size: 90px;
             text-decoration: underline;
             text-underline-offset: 0.1em;
+            font-size: 60px;
         }
         .texto h2{
             font-size: 60px ;

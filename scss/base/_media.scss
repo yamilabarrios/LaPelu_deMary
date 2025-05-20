@@ -1,20 +1,45 @@
 /* MOVIL */
 @media (min-width: 320px){
+main{
+   display: block;
+   .conteiner_t {
+       width: 100%;  height: auto; /* Ajusta según sea necesario */  
+       padding: 10px; /* Ajusta según sea necesario */ 
+       margin: 5px
 
+   }      
+   .item_t {
+         width: 100%; /* 1 item por fila en móviles */
+         margin: 10px 0;
+   }
+  
+   
+   .elemento {
+      /* Otros estilos específicos para móviles */
+      padding: 10px;
+} 
+
+}
+h1{
+      font-family: 20px;
+   }
 }
 
 /* TABLET */
 @media (min-width: 768px){
+   .item_t {
+      width: calc(50% - 20px); /* 2 items por fila en tablets */
+}
 
 }
 /* COMPUTADORA  */
 @media (min-width: 1180px){
+   .texto h1{
+      font-family: 100px;
+   }
     .conteiner_t {
+      display: grid;
         grid-template-columns: repeat (4, 1fr);
         grid-template-rows: repeat(2,50%);
-     }
-     .card{
-
-        transform: translate(90px, 100px);
      }
 }

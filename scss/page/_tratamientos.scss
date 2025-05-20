@@ -1,14 +1,16 @@
 @use "../utilities/mixin" as*;
+@use "../utilities/maps"as*;
 
 .conteiner_t {
-    display: grid;
-    grid-template-columns: repeat (4, 1fr);
+    display: flex;
+    flex-wrap: wrap; /* Permite que los items pasen a la siguiente línea en pantallas pequeñas */
+    justify-content: center; /* Centra los items horizontalmente */
     padding: 20px;
-    margin: 10px;
-    gap: 20px;
-  
+   
+
     .item_t { 
         @include item;
+         background: map-get($colores, fondo2);
     
     } 
     h1{
@@ -16,4 +18,4 @@
         padding: 20px;
 
     }
- }
+}
