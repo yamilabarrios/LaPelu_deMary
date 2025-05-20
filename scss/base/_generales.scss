@@ -7,7 +7,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  
+
 }
 
 body{
@@ -29,6 +29,9 @@ body{
       border-radius: 50%;
       border: 1px solid map-get($colores, borde );
     }
+    h1{
+      @extend %titulo;
+    }
 
 }
 
@@ -37,4 +40,11 @@ body{
   margin: 0.5rem;
   animation: bounce;
   animation-duration: 2s;
+}
+.container{
+  padding: 1%;
+
+}
+.card{
+  border: 1px solid map-get($colores, borde) ;
 }

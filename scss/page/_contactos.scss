@@ -2,14 +2,14 @@
 @use "sass:map";
 @use"../utilities/maps" as*;
 
-
  .contacto {
-     h1 {
-        text-align:center; }
-    @include rectangulo;
+   h1 {
+      text-align:center; }
+   @include rectangulo ;
+   
    
  }
  .formulario{
-    @include rectangulo;
-    display: flex;
+   @include rectangulo;
+   display: flex;
  }
